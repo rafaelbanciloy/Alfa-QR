@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Alfa QR Code PC Stickers</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <img id="myImage" class="w-40" src="alfa.png" alt="My Image" />
+    <div id="qrcode-container">
+      <div class="main-container">
+        <div id="qrcode-container" style="width: 70px; height: 70px;"></div>
+      </div>
+    </div>
+  </body>
+  <center>
+    <a href="index.html" style="background-color: #cd5c5c;">BACK</a>
+  </center>
+  <script>
+    // Get the container element
+    var container = document.getElementById("qrcode-container");
+
+    // Get the image element
+    var myImage = document.getElementById("myImage");
+
+    // Array of data
+    // 9TH FlOOR MB BC
+    var dataArray = [
+      "TED-PG-08-120-WPR-0000-PH",
+      "TED-PG-08-120-WPR-0917-PH",
+      "TED-PG-08-120-WPR-0849-PH",
+      "TED-PG-08-120-WPR-1383-PH",
+      "TED-PG-08-120-WPR-1297-PH",
+      "TED-PG-08-120-WPR-1209-PH",
+      "TED-PG-08-120-WPR-0886-PH",
+      "TED-A8-08-120-WPR-0076-PH",
+      "TED-PG-08-120-WPR-00237-PH",
+      "TED-PG-08-120-WPR-00237-PH",
+      "TED-PG-08-240-WPR-01481-PH",
+      "TED-PG-08-240-WPR-01480-PH",
+      "TED-PG-08-240-WPR-01479-PH",
+      "TED-PG-08-240-WPR-01487-PH",
+      "TED-PG-08-240-WPR-01488-PH",
+      "TED-PG-08-240-WPR-01478-PH",
+      "TED-PG-08-240-WPR-01477-PH",
+      "TED-PG-08-240-WPR-01490-PH",
+      "TED-PG-08-240-WPR-01493-PH",
+      "TED-PG-08-240-WPR-01491-PH",
+      "TED-PG-08-240-WPR-01492-PH",
+      "TED-PG-08-120-WPR-01442-PH",
+      "TED-PG-08-120-WPR-01432-PH",
+      "TED-PG-08-120-WPR-01430-PH",
+      "TED-PG-08-120-WPR-01448-PH",
+      "TED-PG-08-120-WPR-01422-PH",
+      "TED-PG-08-120-WPR-01449-PH",
+      "TED-PG-08-120-WPR-01330-PH",
+      "TED-PG-08-120-WPR-01312-PH",
+      "TED-PG-08-120-WPR-00270-PH",
+      "TED-PG-08-120-WPR-00248-PH",
+      "TED-PG-08-120-WPR-00846-PH",
+      "TED-PG-08-120-WPR-00239-PH",
+      "TED-PG-08-120-WPR-00476-PH",
+      "TED-PG-08-120-WPR-01207-PH",
+      "TED-PG-08-240-WPR-01476-PH",
+      "TED-PG-08-120-WPR-01403-PH",
+      "TED-PG-08-120-WPR-00421-PH",
+      "TED-PG-08-240-WPR-01474-PH",
+      "TED-PG-08-120-WPR-01112-PH",
+      "TED-PG-08-120-WPR-00251-PH",
+      "TED-PG-08-120-WPR-00941-PH",
+      "TED-PG-08-120-WPR-00493-PH",
+      "TED-PG-08-120-WPR-01009-PH",
+      "TED-PG-08-120-WPR-00434-PH",
+      "TED-PG-08-120-WPR-00436-PH",
+      "TED-PG-08-120-WPR-01391-PH",
+      "TED-PG-08-120-WPR-01279-PH",
+      "TED-PG-08-120-WPR-00438-PH",
+      "TED-PG-08-120-WPR-00859-PH",
+      "TED-PG-08-120-WPR-00996-PH",
+      "TED-PG-08-120-WPR-00447-PH",
+      "TED-PG-08-120-WPR-01226-PH",
+      "TED-PG-08-120-WPR-00437-PH",
+      "TED-PG-08-120-WPR-00501-PH",
+      "TED-PG-08-120-WPR-00856-PH",
+      "TED-PG-08-120-WPR-00441-PH",
+      "TED-PG-08-120-WPR-00492-PH",
+      "TED-PG-08-120-WPR-00461-PH",
+      "TED-PG-08-120-WPR-00898-PH",
+      "TED-PG-08-120-WPR-00473-PH",
+      "TED-PG-08-120-WPR-00467-PH",
+      "TED-PG-08-120-WPR-00468-PH",
+      "TED-PG-08-120-WPR-01263-PH",
+      "TED-PG-08-120-WPR-00413-PH",
+      "TED-PG-08-120-WPR-00462-PH",
+      "TED-PG-08-120-WPR-01037-PH",
+      "TED-PG-08-120-WPR-00425-PH",
+      "TED-PG-08-120-WPR-00470-PH",
+      "TED-PG-08-120-WPR-00463-PH",
+      "TED-PG-08-120-WPR-00469-PH",
+      "TED-PG-08-120-WPR-00832-PH",
+      "TED-PG-08-120-WPR-00857-PH",
+      "TED-PG-08-120-WPR-00410-PH",
+      "TED-PG-08-120-WPR-01266-PH",
+      "TED-PG-08-120-WPR-00426-PH",
+      "TED-PG-08-120-WPR-01001-PH",
+      "TED-PG-08-120-WPR-01016-PH",
+      "TED-PG-08-120-WPR-01033-PH",
+      "TED-PG-08-120-WPR-00939-PH",
+      "TED-PG-08-120-WPR-00409-PH",
+      "TED-PG-08-120-WPR-00824-PH",
+      "TED-PG-08-120-WPR-00422-PH",
+      "TED-PG-08-120-WPR-00999-PH",
+      "TED-PG-08-120-WPR-00418-PH",
+      "TED-PG-08-120-WPR-00224-PH",
+      "TED-PG-08-120-WPR-00417-PH",
+      "TED-PG-08-120-WPR-00416-PH",
+      "TED-PG-08-120-WPR-01388-PH",
+      "TED-PG-08-120-WPR-00414-PH",
+      "TED-PG-08-120-WPR-00419-PH",
+      "TED-i5-16-120-WPR-00712-PH",
+      "TED-i5-16-120-WPR-00561-PH",
+      "TED-i5-08-120-WPR-00362-PH",
+      "TED-A6-08-120-WPR-00116-PH",
+      "TED-A6-08-120-WPR-00777-PH",
+      "TED-A6-08-120-WPR-00053-PH",
+      "TED-A6-08-120-WPR-00325-PH",
+      "TED-A6-08-120-WPR-00668-PH",
+      "TED-A6-08-120-WPR-00005-PH",
+      "TED-PG-08-240-WPR-01494-PH",
+      "TED-A6-08-120-WPR-00688-PH",
+      "TED-PG-16-120-WPR-01105-PH",
+      "TED-A8-08-120-WPR-00584-PH",
+      "TED-i5-08-120-WPR-00572-PH"
+    ];
+
+    // Loop through the array
+    dataArray.forEach(function (data) {
+      // Create a div to hold both the QR code and text
+      var qrAndTextContainer = container.appendChild(
+        document.createElement("div")
+      );
+      qrAndTextContainer.className = "qr-and-text"; // Add a class for styling
+
+      // Create a QRCode instance inside the QR and text container
+      var qrCodeDiv = qrAndTextContainer.appendChild(
+        document.createElement("div")
+      );
+      qrCodeDiv.className = "qr-code"; // Add a class for styling
+
+      var qrcode = new QRCode(qrCodeDiv, {
+        text: data,
+        width: 70,
+        height: 70
+      });
+
+      // Create a paragraph element to display the text
+      var textElement = qrAndTextContainer.appendChild(
+        document.createElement("p")
+      );
+      textElement.textContent = data;
+
+      // Append the image element to the QR and text container
+      qrAndTextContainer.appendChild(myImage.cloneNode(true));
+    });
+  </script>
+</html>

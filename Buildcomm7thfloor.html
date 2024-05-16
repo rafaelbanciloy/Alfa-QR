@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <title>Alfa QR Code PC Stickers</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <img id="myImage" class="w-40" src="alfa.png" alt="My Image" />
+    <div id="qrcode-container">
+      <div class="main-container">
+        <div id="qrcode-container" style="width: 70px; height: 70px;"></div>
+      </div>
+    </div>
+    <center>
+      <a href="index.html" style="background-color: #cd5c5c;">BACK</a>
+    </center>
+  </body>
+  <script>
+    // Get the container element
+    var container = document.getElementById("qrcode-container");
+
+    // Get the image element
+    var myImage = document.getElementById("myImage");
+
+    // Array of data
+    // 7TH FLOOR BC
+    var dataArray = [
+      "Walay Data Need pa e input sa array",
+      "Walay Data Need pa e input sa array",
+      "Walay Data Need pa e input sa array",
+      "Walay Data Need pa e input sa array",
+      "TED-A8-08-120-WPR-00000-PH"
+    ];
+    // Loop through the array
+    dataArray.forEach(function (data) {
+      // Create a div to hold both the QR code and text
+      var qrAndTextContainer = container.appendChild(
+        document.createElement("div")
+      );
+      qrAndTextContainer.className = "qr-and-text"; // Add a class for styling
+
+      // Create a QRCode instance inside the QR and text container
+      var qrCodeDiv = qrAndTextContainer.appendChild(
+        document.createElement("div")
+      );
+      qrCodeDiv.className = "qr-code"; // Add a class for styling
+
+      var qrcode = new QRCode(qrCodeDiv, {
+        text: data,
+        width: 70,
+        height: 70
+      });
+
+      // Create a paragraph element to display the text
+      var textElement = qrAndTextContainer.appendChild(
+        document.createElement("p")
+      );
+      textElement.textContent = data;
+
+      // Append the image element to the QR and text container
+      qrAndTextContainer.appendChild(myImage.cloneNode(true));
+    });
+  </script>
+</html>
